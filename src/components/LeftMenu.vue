@@ -3,9 +3,9 @@
     <div class="left-menu-title">
       <i class="el-icon-menu"></i>
       <span>{{this.LeftMenuData.LeftMenu[this.chooseLeftMenu].title}}</span>
-      <span @click="setLeftMenuHidden" :style="{backgroundColor: chooseColor.bgColors}" class="collapse_btn">
-        <icon name="caret-left"></icon>
-      </span>
+      <!--<span @click="setLeftMenuHidden" :style="{backgroundColor: chooseColor.bgColors}" class="collapse_btn">-->
+        <!--<icon name="caret-left"></icon>-->
+      <!--</span>-->
     </div>
     <el-row class="tac">
       <el-col>
@@ -62,6 +62,10 @@
                 {
                   'id': 1,
                   'title': '抢红包'
+                },
+                {
+                  'id': 2,
+                  'title': '抽奖'
                 }
               ],
               'id': 0,
@@ -102,12 +106,21 @@
           type: 'add'
         }
         self.$store.commit('changeEditableTabs', editTabData)
+
+        switch (data.id) {
+          case 1:
+            self.$router.push('/index/page')
+            break
+          default:
+            self.$router.push('/index/choujiang')
+            break
+        }
       },
       getMenu: function () {
       },
       setLeftMenuHidden: function () {
-        let self = this
-        self.$store.commit('setLeftMenuIsHidden', true)
+        // let self = this
+        // self.$store.commit('setLeftMenuIsHidden', true)
       }
     },
     watch: {

@@ -5,6 +5,7 @@ import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
 import RePassword from '@/components/RePassword.vue'
 import ContentBox from '@/components/ContentBox.vue'
+import ChouJiang from '@/components/choujiang.vue'
 Vue.use(Router)
 
 const router = new Router({
@@ -34,6 +35,10 @@ const router = new Router({
           name: 'ContentBox',
           path: 'page',
           component: ContentBox
+        }, {
+          name: 'ChouJiang',
+          path: 'choujiang',
+          component: ChouJiang
         }
       ]
     }
